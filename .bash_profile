@@ -14,6 +14,13 @@ GIT_PS1_SHOWDIRTYSTATE=1
 alias ll='ls -la'
 alias lint='golint ./... | grep -v vendor'
 
+# land changes and open corresponding task in browser
+LAND() {
+    arc land $1
+    open https://topsteam.atlassian.net/browse/$1
+}
+alias land=LAND
+
 # Prompt colors
 FG_BLACK='\[\e[0;30m\]'
 FG_RED='\[\e[0;31m\]'
